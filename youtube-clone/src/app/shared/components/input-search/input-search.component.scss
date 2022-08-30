@@ -19,3 +19,29 @@
         }
     }
 }
+
+
+@media (max-width: 575.98px) {
+    .navbar{
+        flex-direction: column;
+        &__left{
+            &__logo{
+                max-width: 60px;
+                margin-right: 5px;
+            }
+            &__input{
+                .form-control{
+                    width: auto;
+                    margin-right: 5px;
+                }
+            }
+        }
+        &__right{
+            margin-top: 10px;
+        }
+
+    }
+    .video{
+        margin-top: 15px;
+    }
+}

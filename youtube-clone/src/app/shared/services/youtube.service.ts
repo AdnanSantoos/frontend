@@ -13,7 +13,7 @@ import { Result } from '../models/youtube.interface';
 export class YoutubeService {
 
   private API_URL = 'https://www.googleapis.com/youtube/v3/search';
-  private API_TOKEN = 'INSERT_API_TOKEN';
+  private API_TOKEN = 'AIzaSyChH1k0PH6oWx7t4IrgviCmKAzuwYb4a_E';
 
   constructor(private http: HttpClient) { }
 
