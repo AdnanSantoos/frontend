@@ -1,0 +1,74 @@
+<div class="container">
+  <app-input-search  (results)="updateResults($event)"></app-input-search>
+
+  <div class="row">
+    <app-result-search *ngFor="let result of results" class=" col col-sm-3" [result]="result"></app-result-search>
+  </div>
+
+  <ng-container *ngIf="!results && !loading" >
+    <div class="row mt-5">
+      <div class="col-md-9 p-3 bg-light bg-opacity-75 rounded-3 border ">
+        <div class="row">
+          <div class="col-md-12 mb-3">
+           <b>Featured</b> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <img [src]="initialVideos[0].thumbnailUrl" alt="" class="img-fluid">
+          </div>
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="video" *ngFor="let item of initialVideos  | slice:1:4">
+                  <img  class="video__thumb"[src]="item.thumbnailUrl">
+                  <div class="video__desc">
+                    {{item.description}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-3">
+        <div class="card h-100">
+          <img src="https://www.teclasap.com.br/wp-content/uploads/2008/06/propaganda-1.jpg" class="card-img-top">
+          <div class="card-body">
+            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+               dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row mt-5">
+      <div class="col-md-12 p-3 mb-4 bg-light rounded-3 border">
+        <div class="row" >
+          <div class="col-md-12 mb-3">
+            <b>More Videos</b> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="video col-md-3" *ngFor="let item of initialVideos  | slice:4">
+            <img  class="video__thumb"[src]="item.thumbnailUrl">
+            <div class="video__desc">
+              {{item.description}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="loading">
+    <div class="d-flex justify-content-center mt-5">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </ng-container>
+  
+</div>

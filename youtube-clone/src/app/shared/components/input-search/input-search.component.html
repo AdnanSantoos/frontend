@@ -1,0 +1,21 @@
+<form [formGroup]="form" (submit)="searchVideo()">
+  <div class="row">
+    <div class="navbar">
+      <div class="navbar__left">
+        <img class="navbar__left__logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/512px-YouTube_Logo_2017.svg.png"
+          alt="">
+        <div class="navbar__left__input">
+          <input type="email" formControlName="search" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button class="btn btn-danger" [disabled]="!form.valid">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+          Search
+        </button>
+      </div>
+      <div class="navbar__right">
+        <a href="#">Create Account</a> or <a href="#">Sign-in</a>
+      </div>
+    </div>
+  </div>
+</form>
